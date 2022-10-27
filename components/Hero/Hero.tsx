@@ -41,7 +41,10 @@ export default function Hero({}: Props) {
 	]
 
 	return (
-		<div className="h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden snap-center">
+		<section
+			id="hero"
+			className="h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden snap-center"
+		>
 			<Image
 				className="relative rounded-full h-32 w-32 mx-auto object-cover"
 				src="https://picsum.photos/200"
@@ -67,6 +70,6 @@ export default function Hero({}: Props) {
 					))}
 				</div>
 			</div>
-		</div>
+		</section>
 	)
 }
