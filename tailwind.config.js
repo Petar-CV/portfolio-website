@@ -6,11 +6,16 @@ module.exports = {
 	],
 	theme: {
 		extend: {
+			spacing: {
+				128: '32rem',
+			},
 			colors: {
 				'dark-gray': 'rgb(36,36,36)',
 			},
 			letterSpacing: {
-				'extra-wide': '15px',
+				'wide-lg': '5px',
+				'wide-xl': '10px',
+				'wide-2xl': '15px',
 			},
 		},
 	},

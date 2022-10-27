@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
-import { Cursor, useTypewriter } from 'react-simple-typewriter'
 import Link from 'next/link'
+import { Cursor, useTypewriter } from 'react-simple-typewriter'
 
 type Props = {}
 
@@ -17,6 +17,7 @@ export default function Hero({}: Props) {
 		delaySpeed: 2000,
 	})
 
+	// TODO: Export this to constants file
 	const routes: ILocalRoute[] = [
 		{
 			name: 'About',
@@ -43,7 +44,7 @@ export default function Hero({}: Props) {
 	return (
 		<section
 			id="hero"
-			className="h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden snap-center"
+			className="h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden snap-start"
 		>
 			<Image
 				className="relative rounded-full h-32 w-32 mx-auto object-cover"
@@ -54,12 +55,12 @@ export default function Hero({}: Props) {
 			/>
 
 			<div>
-				<h2 className="text-sm uppercase text-gray-500 pb-2 tracking-extra-wide">
+				<h2 className="text-sm uppercase text-gray-500 pb-2 tracking-wide-xl md:tracking-wide-2xl">
 					Software engineer
 				</h2>
-				<h1 className="text-5xl lg:text-6xl font-semibold px-10">
-					<span className="mr-3">{text}</span>
-					<Cursor cursorColor="#F7AB0A" />
+				<h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold px-10">
+					<span>{text}</span>
+					<Cursor cursorColor="#fb923c" />
 				</h1>
 
 				<div className="pt-5">
