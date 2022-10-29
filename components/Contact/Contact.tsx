@@ -38,35 +38,35 @@ export default function Contact({}: Props) {
 				</h3>
 
 				<div className="flex flex-col space-y-10">
-					<h4 className="text-2xl md:text-4xl font-semibold text-center ">
-						<span className="underline decoration-red-700/50 mr-2">
+					<h4 className="font-semibold text-center ">
+						<span className="text-xl md:text-2xl">
 							Found something interesting?
-							<br />
 						</span>
-						Lets talk.
+						<br />
+						<span className="text-2xl md:text-4xl underline decoration-red-700/50">
+							Lets talk.
+						</span>
 					</h4>
 
-					<div className="space-y-10">
+					<div className="space-y-1">
 						<div className="flex items-center space-x-5 justify-center">
 							<EnvelopeIcon className="text-red-900 h-7 w-7 animate-pulse" />
 							{/* TODO: change to mail:to */}
-							<p className="text-lg md:text-2xl">
-								cvetkovocanecpetar@gmail.com
-							</p>
+							<p className="text-lg md:text-xl">cvetkovocanecpetar@gmail.com</p>
 						</div>
 
 						<div className="flex items-center space-x-5 justify-center">
 							<MapPinIcon className="text-red-900 h-7 w-7 animate-pulse" />
 							{/* TODO: change to google maps link */}
-							<p className="text-lg md:text-2xl">Bjelovar, Croatia</p>
+							<p className="text-lg md:text-xl">Bjelovar, Croatia</p>
 						</div>
 					</div>
 
 					<form
 						onSubmit={handleSubmit(onSubmit)}
-						className="flex flex-col space-y-2 w-fit mx-auto"
+						className="flex flex-col space-y-2 mx-auto max-w-[95vw]"
 					>
-						<div className="flex space-x-2">
+						<div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 w-full">
 							<input
 								{...register('name')}
 								placeholder="Name"
@@ -91,13 +91,13 @@ export default function Contact({}: Props) {
 						<textarea
 							{...register('message')}
 							placeholder="Message"
-							className="contact-input"
-							rows={5}
+							className="contact-input resize-none"
+							rows={3}
 						/>
 
 						<button
 							type="submit"
-							className="bg-red-900 py-5 px-10 rounded-md text-black font-bold text-lg"
+							className="bg-red-900 py-3 px-5 rounded-md text-white font-bold text-lg"
 						>
 							Submit
 						</button>
