@@ -10,7 +10,7 @@ import Contact from '../components/Contact/Contact'
 
 export default function Home() {
 	return (
-		<div className="bg-dark-gray text-white h-screen snap-y snap-mandatory overflow-scroll z-0 scroll-smooth">
+		<div className="bg-dark-gray text-white h-screen snap-y snap-mandatory overflow-scroll z-0 scroll-smooth overflow-y-scroll overflow-x-hidden custom-scrollbar">
 			<Head>
 				<title>Petar CV</title>
 				<meta
