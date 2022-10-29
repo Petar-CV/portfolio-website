@@ -13,7 +13,6 @@ export default function Skills({}: Props) {
 				initial={{ opacity: 0 }}
 				whileInView={{ opacity: 1 }}
 				transition={{ duration: 1.5 }}
-				id="experience"
 				className="flex flex-col xl:flex-row relative text-center md:text-left max-w-[2000px] xl:px-10 min-h-screen justify-center xl:space-y-0 mx-auto items-center"
 			>
 				{/* TODO: Implement a generic component for headers */}
@@ -25,7 +24,7 @@ export default function Skills({}: Props) {
 					Hover over a skill for current proficiency
 				</h3>
 
-				<div className="grid grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-5 ">
+				<div className="grid grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-5">
 					<SkillBadge />
 					<SkillBadge />
 					<SkillBadge />
