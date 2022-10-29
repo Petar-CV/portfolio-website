@@ -8,6 +8,7 @@ module.exports = {
 		extend: {
 			colors: {
 				'dark-gray': 'rgb(36,36,36)',
+				'lighter-gray': 'rgb(41, 41, 41)'
 			},
 			letterSpacing: {
 				'wide-lg': '5px',
