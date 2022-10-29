@@ -7,14 +7,14 @@ import { ISkillExperience } from '../../../typings'
 const query = groq`*[_type == "skillExperience"]`
 
 type Data = {
-	skillExperiences: ISkillExperience[]
+	data: ISkillExperience[]
 }
 
 export default async function handler(
 	req: NextApiRequest,
 	res: NextApiResponse<Data>
 ) {
-	const skillExperiences: ISkillExperience[] = await sanityClient.fetch(query)
+	const data: ISkillExperience[] = await sanityClient.fetch(query)
 
-	res.status(200).json({ skillExperiences })
+	res.status(200).json({ data })
 }

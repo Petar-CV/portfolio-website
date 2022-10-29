@@ -10,14 +10,14 @@ const query = groq`*[_type == "experience"] {
 }`
 
 type Data = {
-	experiences: IExperience[]
+	data: IExperience[]
 }
 
 export default async function handler(
 	req: NextApiRequest,
 	res: NextApiResponse<Data>
 ) {
-	const experiences: IExperience[] = await sanityClient.fetch(query)
+	const data: IExperience[] = await sanityClient.fetch(query)
 
-	res.status(200).json({ experiences })
+	res.status(200).json({ data })
 }

@@ -10,14 +10,14 @@ const query = groq`*[_type == "project"] {
 }`
 
 type Data = {
-	projects: IProject[]
+	data: IProject[]
 }
 
 export default async function handler(
 	req: NextApiRequest,
 	res: NextApiResponse<Data>
 ) {
-	const projects: IProject[] = await sanityClient.fetch(query)
+	const data: IProject[] = await sanityClient.fetch(query)
 
-	res.status(200).json({ projects })
+	res.status(200).json({ data })
 }
