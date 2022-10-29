@@ -6,7 +6,7 @@ type Props = {}
 
 export default function WorkExperienceCard({}: Props) {
 	return (
-		<article className="flex flex-col rounded-lg items-center snap-center p-10 bg-lighter-gray space-y-7 flex-shrink-0 w-80 md:w-[600px] xl:w-[900px] opacity-40 hover:opacity-100 cursor-pointer transition-opacity duration-200 overflow-hidden">
+		<article className="flex flex-col rounded-lg items-center snap-center p-5 bg-lighter-gray space-y-5 flex-shrink-0 w-80 md:w-[600px] xl:w-[900px] opacity-40 hover:opacity-100 cursor-pointer transition-opacity duration-200 overflow-hidden">
 			<motion.div
 				className="w-32 h-32 rounded-full xl:w-52 xl:h-52 object-cover object-center"
 				initial={{
@@ -34,8 +34,10 @@ export default function WorkExperienceCard({}: Props) {
 			</motion.div>
 
 			<div className="px-0 md:px-10">
-				<h4 className="text-4xl font-light ">Something of something</h4>
-				<p className="font-bold text-2xl mt-1">Company name</p>
+				<h4 className="text-2xl md:text-4xl font-light ">
+					Something of something
+				</h4>
+				<p className="font-bold text-xl md:text-2xl mt-1">Company name</p>
 				<div className="flex space-x-2 my-2">
 					<Image
 						className="rounded-full h-10 w-10"
@@ -47,7 +49,7 @@ export default function WorkExperienceCard({}: Props) {
 					{/* Technology stacks used */}
 				</div>
 				<p className="uppercase py-5 text-gray-300">{/* Dates */}</p>
-				<ul className="list-disc space-y-4 ml-5 text-lg">
+				<ul className="list-disc space-y-2 ml-5 text-lg">
 					<li>Summary</li>
 					<li>Summary</li>
 					<li>Summary</li>
