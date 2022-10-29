@@ -63,8 +63,8 @@ export default function About({}: Props) {
 					>
 						<h4 className="text-4xl font-semibold">
 							Here's a{' '}
-							<span className="underline decoration-orange-400">snippet</span>{' '}
-							of my background
+							<span className="underline decoration-red-900">snippet</span> of
+							my background
 						</h4>
 						<p className="text-base">
 							Lorem ipsum dolor, sit amet consectetur adipisicing elit.
