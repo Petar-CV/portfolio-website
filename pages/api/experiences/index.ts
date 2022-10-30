@@ -7,7 +7,7 @@ import { ISkillExperience } from '../../../typings'
 const query = groq`*[_type == "experience"] {
 	...,
 	technologies[]->,
-}`
+} | order(currentEmployer)`
 
 type Data = {
 	data: ISkillExperience[]
