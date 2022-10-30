@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { SocialIcon } from 'react-social-icons'
+import { EnvelopeOpenIcon } from '@heroicons/react/24/outline'
 import { motion } from 'framer-motion'
 
 import { ISocial } from '../../typings'
@@ -56,13 +57,8 @@ export default function Header({ socials }: Props) {
 					}}
 					className="flex flex-row items-center text-gray-300 cursor-pointer"
 				>
-					<SocialIcon
-						className="cursor-pointer"
-						network="email"
-						fgColor="gray"
-						bgColor="transparent"
-					></SocialIcon>
-					<p className="uppercase hidden md:inline-flex text-sm text-gray-400">
+					<EnvelopeOpenIcon className="w-6 h-6" />
+					<p className="uppercase hidden md:inline-flex text-sm ml-1 text-gray-400">
 						Get in touch
 					</p>
 				</motion.div>
