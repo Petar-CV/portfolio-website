@@ -22,6 +22,16 @@ export default {
 			},
 		},
 		{
+			name: 'typewriterWords',
+			title: 'Words for typewriter effect',
+			type: 'array',
+			of: [
+				{
+					type: 'string',
+				},
+			],
+		},
+		{
 			name: 'backgroundInformation',
 			title: 'Background information',
 			type: 'string',
