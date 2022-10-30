@@ -8,10 +8,14 @@ const nextConfig = {
 				hostname: 'picsum.photos',
 				protocol: 'https',
 			},
+			{
+				hostname: 'cdn.sanity.io',
+				protocol: 'https',
+			},
 		],
 	},
 }
 
-// TODO: Remove remote pattern after implementation
+// TODO: Remove remote pattern after implementation or leave in development mode
 
 module.exports = nextConfig
