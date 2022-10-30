@@ -51,6 +51,7 @@ export default function WorkExperienceCard({ experience }: Props) {
 							className="rounded-full h-10 w-10"
 							src={urlFor(technology.image).url()}
 							alt={technology.name ?? ''}
+							key={technology._id}
 							width={40}
 							height={40}
 						/>
