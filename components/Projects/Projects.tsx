@@ -20,9 +20,9 @@ export default function Projects({ projects }: Props) {
 				className="h-screen relative flex flex-col md:flex-row overflow-hidden text-left max-w-full justify-evenly mx-auto items-center z-0"
 			>
 				{/* TODO: Implement a generic component for headers */}
-				<h3 className="absolute top-24 uppercase tracking-wide-2xl text-gray-500 text-2xl">
+				<h1 className="absolute top-24 uppercase tracking-wide-2xl text-gray-500 text-2xl">
 					Projects
-				</h3>
+				</h1>
 
 				<div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 custom-scrollbar">
 					{projects.map((project, i) => (

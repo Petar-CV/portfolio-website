@@ -18,9 +18,9 @@ export default function About({ pageInfo }: Props) {
 				transition={{ duration: 1.5 }}
 				className="flex flex-col md:flex-row justify-evenly items-center relative h-screen max-w-7xl px-10 mx-auto text-center md:text-left"
 			>
-				<h3 className="absolute top-24 uppercase tracking-wide-2xl text-gray-500 text-2xl">
+				<h1 className="absolute top-24 uppercase tracking-wide-2xl text-gray-500 text-2xl">
 					About
-				</h3>
+				</h1>
 
 				<div className="flex flex-col md:flex-row items-center">
 					<motion.div

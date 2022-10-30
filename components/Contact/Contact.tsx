@@ -41,9 +41,9 @@ export default function Contact({ pageInfo }: Props) {
 				className="h-screen relative flex flex-col md:flex-row text-center md:text-left max-w-7xl px-10 justify-evenly mx-auto items-center"
 			>
 				{/* TODO: Implement a generic component for headers */}
-				<h3 className="absolute top-24 uppercase tracking-wide-2xl text-gray-500 text-2xl">
+				<h1 className="absolute top-24 uppercase tracking-wide-2xl text-gray-500 text-2xl">
 					Contact
-				</h3>
+				</h1>
 
 				<div className="flex flex-col space-y-10">
 					<h4 className="font-semibold text-center ">
