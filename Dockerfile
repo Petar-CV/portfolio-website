@@ -15,20 +15,8 @@ RUN npm install sharp
 
 RUN apk add curl
 
-# Setting environment variables
-ARG NEXT_PUBLIC_SANITY_DATASET=production
-ARG NEXT_PUBLIC_SANITY_PROJECT_ID=""
-ARG NEXT_PUBLIC_BASE_URL=http://localhost:3000/
-
-ENV NEXT_SHARP_PATH="/usr/src/personal-website/node_modules/sharp"
-ENV NEXT_PUBLIC_SANITY_DATASET=$NEXT_PUBLIC_SANITY_DATASET
-ENV NEXT_PUBLIC_SANITY_PROJECT_ID=$NEXT_PUBLIC_SANITY_PROJECT_ID
-ENV NEXT_PUBLIC_BASE_URL=$NEXT_PUBLIC_BASE_URL
-
 # Copying source files
 COPY . .
-
-RUN rm .env*
 
 # Building app (build generates static files so it needs API to be running)
 # TODO: Improve this!!!
