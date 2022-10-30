@@ -3,16 +3,24 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Cursor, useTypewriter } from 'react-simple-typewriter'
 
-type Props = {}
+import { IPageInfo } from '../../typings'
+import { urlFor } from '../../sanity'
+
+type Props = {
+	pageInfo: IPageInfo
+}
 
 interface ILocalRoute {
 	name: string
 	href: string
 }
 
-export default function Hero({}: Props) {
+export default function Hero({ pageInfo }: Props) {
 	const [text] = useTypewriter({
-		words: ["Name's Petar", "I'm a software developer"],
+		words: pageInfo.typewriterWords ?? [
+			"Name's Petar",
+			"I'm a software developer",
+		],
 		loop: true,
 		delaySpeed: 2000,
 	})
@@ -48,15 +56,15 @@ export default function Hero({}: Props) {
 		>
 			<Image
 				className="relative rounded-full h-32 w-32 mx-auto object-cover"
-				src="https://picsum.photos/200"
-				alt="User profile picture"
+				src={urlFor(pageInfo.heroImage).url()}
+				alt={pageInfo.name ?? 'Petar Cvetko Voćanec'}
 				width={128}
 				height={128}
 			/>
 
 			<div>
 				<h2 className="text-sm uppercase text-gray-500 pb-2 tracking-wide-xl md:tracking-wide-2xl">
-					Software engineer
+					{pageInfo.role ?? 'Software Engineer'}
 				</h2>
 				<h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold px-10">
 					<span>{text}</span>

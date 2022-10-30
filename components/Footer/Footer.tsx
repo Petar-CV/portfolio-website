@@ -1,9 +1,13 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 
-type Props = {}
+import { IPageInfo } from '../../typings'
 
-export default function Footer({}: Props) {
+type Props = {
+	pageInfo: IPageInfo
+}
+
+export default function Footer({ pageInfo }: Props) {
 	return (
 		<motion.footer
 			initial={{ opacity: 0, y: 100 }}
@@ -14,7 +18,8 @@ export default function Footer({}: Props) {
 		>
 			<div className="flex justify-center items-center text-center text-gray-400 text-sm md:text-base">
 				<h4>
-					Copyright &copy; {new Date().getFullYear()} | Petar Cvetko Voćanec
+					Copyright &copy; {new Date().getFullYear()} |{' '}
+					{pageInfo.name ?? 'Petar Cvetko Voćanec'}
 				</h4>
 			</div>
 		</motion.footer>

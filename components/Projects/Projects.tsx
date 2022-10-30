@@ -2,11 +2,14 @@ import React from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 
-type Props = {}
+import { IProject } from '../../typings'
+import { urlFor } from '../../sanity'
 
-export default function Projects({}: Props) {
-	const projects = ['Project1', 'project2', 'project3']
+type Props = {
+	projects: IProject[]
+}
 
+export default function Projects({ projects }: Props) {
 	return (
 		<section id="projects" className="snap-start">
 			{/* TODO: Implement a generic component for sections with same animation */}
@@ -23,7 +26,10 @@ export default function Projects({}: Props) {
 
 				<div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 custom-scrollbar">
 					{projects.map((project, i) => (
-						<div className="w-screen h-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44">
+						<div
+							key={project._id}
+							className="w-screen h-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44"
+						>
 							<motion.div
 								initial={{ y: -300, opacity: 0 }}
 								transition={{ duration: 1.2 }}
@@ -31,26 +37,25 @@ export default function Projects({}: Props) {
 								viewport={{ once: true }}
 							>
 								<Image
-									src="https://picsum.photos/128"
-									alt="User profile picture"
-									width={128}
-									height={128}
+									src={urlFor(project.image).url()}
+									alt={project.title ?? ''}
+									width={512}
+									height={512}
 								/>
 							</motion.div>
 
 							<div className="space-y-10 px-0 md:px-10 max-w-6xl">
 								<h4 className="text-xl md:text-4xl font-semibold text-center">
-									<span className="underline decoration-red-700/50 mr-2">
-										Project {i + 1} of {projects.length}:
+									<span>
+										<span className="underline decoration-red-700/50 mr-2">
+											Project {i + 1} of {projects.length}:
+										</span>
+										{project.title}
 									</span>
-									{project}
 								</h4>
 
 								<p className="text-lg text-center md:text-left">
-									Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
-									nihil, nesciunt velit qui debitis expedita non sequi,
-									reiciendis facilis architecto ullam eveniet delectus porro
-									repudiandae animi vitae cum consequatur eaque id.
+									{project.summary}
 								</p>
 							</div>
 						</div>

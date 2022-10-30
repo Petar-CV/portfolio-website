@@ -3,7 +3,11 @@ import { motion } from 'framer-motion'
 import { EnvelopeIcon, MapPinIcon } from '@heroicons/react/24/solid'
 import { useForm, SubmitHandler } from 'react-hook-form'
 
-type Props = {}
+import { IPageInfo } from '../../typings'
+
+type Props = {
+	pageInfo: IPageInfo
+}
 
 type ContactForm = {
 	name: string
@@ -12,7 +16,7 @@ type ContactForm = {
 	message: string
 }
 
-export default function Contact({}: Props) {
+export default function Contact({ pageInfo }: Props) {
 	const {
 		register,
 		handleSubmit,
@@ -20,7 +24,11 @@ export default function Contact({}: Props) {
 	} = useForm<ContactForm>()
 	const onSubmit: SubmitHandler<ContactForm> = (formData) => {
 		// TODO: Doesn't work if the user doesn't have an email client installed
-		window.location.href = `mailto:cvetkovocanecpetar@gmail.com?subject=${formData.subject}&body=From ${formData.name}. ${formData.message}`
+		window.location.href = `mailto:${
+			pageInfo.email ?? 'cvetkovocanecpetar@gmail.com'
+		}?subject=${formData.subject}&body=From ${formData.name}. ${
+			formData.message
+		}`
 	}
 
 	return (
@@ -52,13 +60,17 @@ export default function Contact({}: Props) {
 						<div className="flex items-center space-x-5 justify-center">
 							<EnvelopeIcon className="text-red-900 h-7 w-7 animate-pulse" />
 							{/* TODO: change to mail:to */}
-							<p className="text-lg md:text-xl">cvetkovocanecpetar@gmail.com</p>
+							<p className="text-lg md:text-xl">
+								{pageInfo.email ?? 'cvetkovocanecpetar@gmail.com'}
+							</p>
 						</div>
 
 						<div className="flex items-center space-x-5 justify-center">
 							<MapPinIcon className="text-red-900 h-7 w-7 animate-pulse" />
 							{/* TODO: change to google maps link */}
-							<p className="text-lg md:text-xl">Bjelovar, Croatia</p>
+							<p className="text-lg md:text-xl">
+								{pageInfo.address ?? 'Bjelovar, Croatia'}
+							</p>
 						</div>
 					</div>
 

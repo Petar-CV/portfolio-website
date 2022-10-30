@@ -2,10 +2,14 @@ import React from 'react'
 import { motion } from 'framer-motion'
 
 import SkillBadge from './Badge/SkillBadge'
+import { ISkill, ISkillExperience } from '../../typings'
 
-type Props = {}
+type Props = {
+	skills: ISkill[]
+	skillExperiences: ISkillExperience[]
+}
 
-export default function Skills({}: Props) {
+export default function Skills({ skills, skillExperiences }: Props) {
 	return (
 		<section id="skills" className="snap-start">
 			{/* TODO: Implement a generic component for sections with same animation */}
@@ -20,22 +24,11 @@ export default function Skills({}: Props) {
 					Skills
 				</h3>
 
-				<h3 className="absolute top-36 px-4 uppercase tracking-wide-lg text-gray-500 text-sm">
-					Hover over a skill for current proficiency
-				</h3>
-
-				<div className="grid grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-5">
-					<SkillBadge />
-					<SkillBadge />
-					<SkillBadge />
-					<SkillBadge />
-					<SkillBadge />
-					<SkillBadge />
-					<SkillBadge />
-					<SkillBadge />
-					<SkillBadge />
-					<SkillBadge />
-					<SkillBadge />
+				{/* TODO: Sort skills by experience */}
+				<div className="grid grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-5 h-[65vh] overflow-y-scroll overflow-x-hidden custom-scrollbar">
+					{skills.map((skill) => (
+						<SkillBadge key={skill._id} skill={skill} />
+					))}
 				</div>
 			</motion.div>
 		</section>

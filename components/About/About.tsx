@@ -2,9 +2,14 @@ import React from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 
-type Props = {}
+import { IPageInfo } from '../../typings'
+import { urlFor } from '../../sanity'
 
-export default function About({}: Props) {
+type Props = {
+	pageInfo: IPageInfo
+}
+
+export default function About({ pageInfo }: Props) {
 	return (
 		<section id="about" className="snap-center">
 			<motion.div
@@ -37,8 +42,8 @@ export default function About({}: Props) {
 					>
 						<Image
 							className="rounded-full md:rounded-lg object-cover"
-							src="https://picsum.photos/384"
-							alt="User profile picture"
+							src={urlFor(pageInfo.heroImage).url()}
+							alt={pageInfo.name ?? 'Petar Cvetko Voćanec'}
 							width={384}
 							height={384}
 						/>
@@ -67,11 +72,7 @@ export default function About({}: Props) {
 							my background
 						</h4>
 						<p className="text-base">
-							Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-							Asperiores error nulla rerum impedit libero sunt consectetur,
-							dignissimos maxime laudantium. Natus provident ratione dicta
-							consectetur repudiandae, magnam optio omnis incidunt ab fugit
-							mollitia labore dolore quaerat aspernatur, unde quod error.
+							{pageInfo.backgroundInformation ?? 'About me'}
 						</p>
 					</motion.div>
 				</div>

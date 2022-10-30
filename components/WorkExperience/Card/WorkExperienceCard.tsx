@@ -2,9 +2,14 @@ import React from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 
-type Props = {}
+import { IExperience } from '../../../typings'
+import { urlFor } from '../../../sanity'
 
-export default function WorkExperienceCard({}: Props) {
+type Props = {
+	experience: IExperience
+}
+
+export default function WorkExperienceCard({ experience }: Props) {
 	return (
 		<article className="flex flex-col rounded-lg items-center snap-center p-5 bg-lighter-gray space-y-5 flex-shrink-0 w-80 md:w-[600px] xl:w-[900px] opacity-40 hover:opacity-100 cursor-pointer transition-opacity duration-200 overflow-hidden">
 			<motion.div
@@ -26,8 +31,8 @@ export default function WorkExperienceCard({}: Props) {
 			>
 				<Image
 					className="rounded-full object-cover"
-					src="https://picsum.photos/208"
-					alt="User profile picture"
+					src={urlFor(experience.companyImage).url()}
+					alt={experience.company ?? ''}
 					width={208}
 					height={208}
 				/>
@@ -35,26 +40,36 @@ export default function WorkExperienceCard({}: Props) {
 
 			<div className="px-0 md:px-10">
 				<h4 className="text-2xl md:text-4xl font-light ">
-					Something of something
+					{experience.jobTitle}
 				</h4>
-				<p className="font-bold text-xl md:text-2xl mt-1">Company name</p>
+				<p className="font-bold text-xl md:text-2xl mt-1">
+					{experience.company}
+				</p>
 				<div className="flex space-x-2 my-2">
-					<Image
-						className="rounded-full h-10 w-10"
-						src="https://picsum.photos/40"
-						alt="User profile picture"
-						width={40}
-						height={40}
-					/>
-					{/* Technology stacks used */}
+					{experience.technologies?.map((technology) => (
+						<Image
+							className="rounded-full h-10 w-10"
+							src={urlFor(technology.image).url()}
+							alt={technology.name ?? ''}
+							width={40}
+							height={40}
+						/>
+					))}
 				</div>
-				<p className="uppercase py-5 text-gray-300">{/* Dates */}</p>
+				{experience.dateStarted && experience.dateEnded && (
+					<p className="uppercase py-5 text-gray-300">
+						{experience.dateStarted} - {experience.dateEnded}
+					</p>
+				)}
+				{experience.dateStarted && !experience.dateEnded && (
+					<p className="uppercase py-5 text-gray-300">
+						{experience.dateStarted} - Present
+					</p>
+				)}
 				<ul className="list-disc space-y-2 ml-5 text-lg">
-					<li>Summary</li>
-					<li>Summary</li>
-					<li>Summary</li>
-					<li>Summary</li>
-					<li>Summary</li>
+					{experience.skillsAcquired?.map((skill) => (
+						<li key={skill}>{skill}</li>
+					))}
 				</ul>
 			</div>
 		</article>

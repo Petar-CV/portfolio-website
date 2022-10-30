@@ -2,10 +2,13 @@ import React from 'react'
 import { motion } from 'framer-motion'
 
 import WorkExperienceCard from './Card/WorkExperienceCard'
+import { IExperience } from '../../typings'
 
-type Props = {}
+type Props = {
+	experiences: IExperience[]
+}
 
-export default function WorkExperience({}: Props) {
+export default function WorkExperience({ experiences }: Props) {
 	return (
 		<section id="experience" className="snap-center">
 			<motion.div
@@ -19,10 +22,9 @@ export default function WorkExperience({}: Props) {
 				</h3>
 
 				<div className="w-full flex space-x-5 overflow-x-scroll p-10 snap-x snap-mandatory custom-scrollbar">
-					<WorkExperienceCard />
-					<WorkExperienceCard />
-					<WorkExperienceCard />
-					<WorkExperienceCard />
+					{experiences.map((experience) => (
+						<WorkExperienceCard key={experience._id} experience={experience} />
+					))}
 				</div>
 			</motion.div>
 		</section>
