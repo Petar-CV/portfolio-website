@@ -67,7 +67,7 @@ export default function About({ pageInfo }: Props) {
 						className="space-y-10 px-0 md:px-10 max-w-5xl"
 					>
 						<h4 className="text-4xl font-semibold">
-							Here's a{' '}
+							Here&apos;s a&nbsp;
 							<span className="underline decoration-red-900">snippet</span> of
 							my background
 						</h4>
