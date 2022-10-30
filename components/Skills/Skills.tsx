@@ -25,7 +25,7 @@ export default function Skills({ skills, skillExperiences }: Props) {
 				</h1>
 
 				{/* TODO: Sort skills by experience */}
-				<div className="grid grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-5 h-[65vh] overflow-y-scroll overflow-x-hidden custom-scrollbar">
+				<div className="p-4 grid grid-cols-3 md:grid-cols-5 xl:grid-cols-7 gap-5 h-[65vh] overflow-x-hidden overflow-y-auto custom-scrollbar">
 					{skills.map((skill) => (
 						<SkillBadge key={skill._id} skill={skill} />
 					))}
