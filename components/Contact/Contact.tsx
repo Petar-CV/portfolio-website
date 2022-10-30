@@ -109,7 +109,7 @@ export default function Contact({ pageInfo }: Props) {
 
 						<button
 							type="submit"
-							className="bg-red-900 py-3 px-5 rounded-md text-white font-bold text-lg"
+							className="bg-red-900 hover:brightness-85 py-3 px-5 rounded-md text-white font-bold text-lg"
 						>
 							Submit
 						</button>

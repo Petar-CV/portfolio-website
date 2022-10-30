@@ -15,6 +15,9 @@ module.exports = {
 				'wide-xl': '10px',
 				'wide-2xl': '15px',
 			},
+			brightness: {
+				85: '.85',
+			},
 		},
 	},
 	plugins: [require('tailwind-scrollbar')],
