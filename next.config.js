@@ -14,6 +14,10 @@ const nextConfig = {
 			},
 		],
 	},
+	i18n: {
+		locales: ['en'],
+		defaultLocale: 'en',
+	},
 }
 
 // TODO: Remove remote pattern after implementation or leave in development mode
