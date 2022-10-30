@@ -4,10 +4,7 @@ import { groq } from 'next-sanity'
 
 import { IExperience } from '../../../typings'
 
-const query = groq`*[_type == "experience"] {
-	...,
-	technologies[]->,
-}`
+const query = groq`*[_type == "skillExperience"]`
 
 type Data = {
 	data: IExperience[]
