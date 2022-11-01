@@ -2,6 +2,7 @@ version: '3.9'
 
 services:
   personal-website:
+    restart: unless-stopped
     ports:
       - 3000:3000
     build:
@@ -11,5 +12,3 @@ services:
       - ./:/usr/src/app
       - /usr/src/app/node_modules
       - /usr/src/app/.next
-    # env_file:
-    #   - .env
