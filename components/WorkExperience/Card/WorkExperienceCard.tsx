@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 
 import { IExperience } from '../../../typings'
 import { urlFor } from '../../../sanity'
+import Link from 'next/link'
 
 type Props = {
 	experience: IExperience
@@ -42,9 +43,19 @@ export default function WorkExperienceCard({ experience }: Props) {
 				<h4 className="text-xl md:text-4xl font-light ">
 					{experience.jobTitle}
 				</h4>
-				<p className="font-bold text-lg md:text-2xl mt-1">
-					{experience.company}
-				</p>
+				{experience.url ? (
+					<Link
+						href={experience.url}
+						target={'_blank'}
+						className="font-bold text-lg md:text-2xl mt-1 hover:brightness-75 hover:underline decoration-red-700/50"
+					>
+						{experience.company}
+					</Link>
+				) : (
+					<p className="font-bold text-lg md:text-2xl mt-1">
+						{experience.company}
+					</p>
+				)}
 				<div className="grid gap-2 md:gap-4 grid-cols-5 md:grid-cols-7 xl:grid-cols-9 my-2">
 					{experience.technologies?.map((technology) => (
 						<Image
