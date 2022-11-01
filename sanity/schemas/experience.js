@@ -30,11 +30,17 @@ export default {
 			name: 'dateStarted',
 			title: 'Date started',
 			type: 'date',
+			options: {
+				dateFormat: 'MM-YYYY',
+			},
 		},
 		{
 			name: 'dateEnded',
 			title: 'Date ended',
 			type: 'date',
+			options: {
+				dateFormat: 'MM-YYYY',
+			},
 		},
 		{
 			name: 'currentEmployer',

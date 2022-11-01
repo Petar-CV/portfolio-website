@@ -1,10 +1,10 @@
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { motion } from 'framer-motion'
 
 import { IExperience } from '../../../typings'
 import { urlFor } from '../../../sanity'
-import Link from 'next/link'
 
 type Props = {
 	experience: IExperience
@@ -46,7 +46,7 @@ export default function WorkExperienceCard({ experience }: Props) {
 				{experience.url ? (
 					<Link
 						href={experience.url}
-						target={'_blank'}
+						target="_blank"
 						className="font-bold text-lg md:text-2xl mt-1 hover:brightness-75 hover:underline decoration-red-700/50"
 					>
 						{experience.company}
