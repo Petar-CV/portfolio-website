@@ -1,5 +1,10 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Autoplay, Navigation, Pagination } from 'swiper'
+
+import 'swiper/css'
+import 'swiper/css/pagination'
 
 import WorkExperienceCard from './Card/WorkExperienceCard'
 import { IExperience } from '../../typings'
@@ -15,17 +20,30 @@ export default function WorkExperience({ experiences }: Props) {
 				initial={{ opacity: 0 }}
 				whileInView={{ opacity: 1 }}
 				transition={{ duration: 1.5 }}
-				className="h-screen flex flex-col md:flex-row relative overflow-hidden text-left max-w-full justify-evenly px-10 mx-auto items-center"
+				className="h-screen m-auto flex items-center p-4 md:p-0 max-w-xl"
 			>
-				<h3 className="absolute text-center top-24 uppercase tracking-wide-2xl text-gray-500 text-2xl">
-					Experience
-				</h3>
-
-				<div className="w-full flex space-x-5 overflow-x-scroll p-10 snap-x snap-mandatory custom-scrollbar">
+				<Swiper
+					slidesPerView={'auto'}
+					spaceBetween={30}
+					pagination={{
+						clickable: true,
+					}}
+					autoplay={{
+						delay: 3500,
+						disableOnInteraction: false,
+						pauseOnMouseEnter: true,
+					}}
+					grabCursor={true}
+					navigation={true}
+					modules={[Autoplay, Pagination, Navigation]}
+					className="min-h-[300px] max-h-[700px] h-full flex justify-center items-center"
+				>
 					{experiences.map((experience) => (
-						<WorkExperienceCard key={experience._id} experience={experience} />
+						<SwiperSlide key={experience._id}>
+							<WorkExperienceCard experience={experience} />
+						</SwiperSlide>
 					))}
-				</div>
+				</Swiper>
 			</motion.div>
 		</section>
 	)

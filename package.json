@@ -20,7 +20,8 @@
 		"react-hook-form": "^7.38.0",
 		"react-simple-typewriter": "^4.0.5",
 		"react-social-icons": "^5.15.0",
-		"sass": "^1.55.0"
+		"sass": "^1.55.0",
+		"swiper": "^8.4.4"
 	},
 	"devDependencies": {
 		"@types/node": "18.11.7",
