@@ -59,7 +59,7 @@ export default function WorkExperienceCard({ experience }: Props) {
 				<div className="grid gap-2 md:gap-4 grid-cols-5 md:grid-cols-7 xl:grid-cols-9 my-2">
 					{experience.technologies?.map((technology) => (
 						<Image
-							className="rounded-full h-10 w-10"
+							className="rounded-full h-10 w-10 bg-gray-100"
 							src={urlFor(technology.image).url()}
 							alt={technology.name ?? ''}
 							key={technology._id}
