@@ -1,13 +1,13 @@
 @layer components {
-	.hero-button {
-		@apply px-6 py-2 m-1 border border-gray-700 rounded-full uppercase text-xs tracking-widest text-gray-500 transition-all hover:text-opacity-60 hover:border-opacity-60;
-	}
+  .hero-button {
+    @apply px-6 py-2 m-1 border border-gray-700 rounded-full uppercase text-xs tracking-widest text-gray-500 transition-all hover:text-opacity-60 hover:border-opacity-60;
+  }
 
-	.contact-input {
-		@apply outline-none bg-slate-400/10 rounded-sm border-b px-6 py-4 border-gray-800 text-gray-500 placeholder-gray-500 transition-all focus:border-red-700/70 focus:text-red-700/70;
-	}
+  .contact-input {
+    @apply outline-none bg-slate-400/10 rounded-sm border-b px-6 py-4 border-gray-800 text-gray-500 placeholder-gray-500 transition-all focus:border-red-700/70 focus:text-red-700/70;
+  }
 
-	.custom-scrollbar {
-		@apply scrollbar-track-gray-400/20 scrollbar-thumb-red-900/80 scrollbar-thin;
-	}
+  .custom-scrollbar {
+    @apply scrollbar-track-gray-400/20 scrollbar-thumb-red-900/80 scrollbar-thin;
+  }
 }
