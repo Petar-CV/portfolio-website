@@ -71,7 +71,7 @@ export default function About({ pageInfo }: Props) {
 							<span className="underline decoration-red-900">snippet</span> of
 							my background
 						</h4>
-						<p className="text-base">
+						<p className="text-base whitespace-pre-line">
 							{pageInfo.backgroundInformation ?? 'About me'}
 						</p>
 					</motion.div>
