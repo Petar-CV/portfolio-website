@@ -21,14 +21,7 @@ type Props = {
   skillExperiences: ISkillExperience[];
 };
 
-export default function Home({
-  pageInfo,
-  experiences,
-  skills,
-  projects,
-  socials,
-  skillExperiences,
-}: Props) {
+export default function Home({ pageInfo, experiences, skills, projects, socials }: Props) {
   return (
     <div className="bg-dark-gray text-white h-screen snap-y snap-mandatory overflow-scroll z-0 scroll-smooth overflow-y-scroll overflow-x-hidden custom-scrollbar">
       <Head>
@@ -45,7 +38,7 @@ export default function Home({
 
       <WorkExperience experiences={experiences} />
 
-      <Skills skills={skills} skillExperiences={skillExperiences} />
+      <Skills skills={skills} />
 
       <Projects projects={projects} />
 

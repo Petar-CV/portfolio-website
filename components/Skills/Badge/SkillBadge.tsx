@@ -19,7 +19,7 @@ export default function SkillBadge({ skill }: Props) {
         transition={{ duration: 1.2 }}
         whileInView={{ opacity: 1 }}>
         <Image
-          className="rounded-full bg-gray-100 border border-gray-500 h-24 w-24 md:h-28 md:w-28 xl:h-32 xl:w-32 object-cover filter group-hover:brightness-75 group-hover:grayscale transition duration-500 ease-in-out"
+          className="rounded-full bg-gray-100 border border-gray-500 h-16 w-16 md:h-24 md:w-24 xl:h-32 xl:w-32 object-cover filter group-hover:brightness-75 group-hover:grayscale transition duration-500 ease-in-out"
           src={urlFor(skill.image).url()}
           alt={skill.name ?? ''}
           width={128}

@@ -2,14 +2,13 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 import SkillBadge from './Badge/SkillBadge';
-import { ISkill, ISkillExperience } from '../../typings';
+import { ISkill } from '../../typings';
 
 type Props = {
   skills: ISkill[];
-  skillExperiences: ISkillExperience[];
 };
 
-export default function Skills({ skills, skillExperiences }: Props) {
+export default function Skills({ skills }: Props) {
   return (
     <section id="skills" className="snap-start">
       {/* TODO: Implement a generic component for sections with same animation */}
@@ -17,17 +16,34 @@ export default function Skills({ skills, skillExperiences }: Props) {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1.5 }}
-        className="flex flex-col xl:flex-row relative text-center md:text-left max-w-[2000px] xl:px-10 min-h-screen justify-center xl:space-y-0 mx-auto items-center">
+        className="flex flex-col xl:flex-row text-center md:text-left max-w-[2000px] xl:px-10 min-h-screen justify-center xl:space-y-0 mx-auto items-center space-y-8 px-5">
         {/* TODO: Implement a generic component for headers */}
-        <h1 className="absolute top-24 uppercase tracking-wide-2xl text-gray-500 text-2xl">
-          Skills
-        </h1>
+        <div>
+          <h1 className="uppercase tracking-wide-2xl text-gray-500 text-lg md:text-2xl text-center">
+            Most prominent skills
+          </h1>
 
-        {/* TODO: Sort skills by experience */}
-        <div className="p-4 grid grid-cols-3 md:grid-cols-5 xl:grid-cols-7 gap-5 h-[65vh] overflow-x-hidden overflow-y-auto custom-scrollbar">
-          {skills.map((skill) => (
-            <SkillBadge key={skill._id} skill={skill} />
-          ))}
+          <div className="p-4 grid grid-cols-4 md:grid-cols-5 xl:grid-cols-7 gap-2 md:gap-5 overflow-x-hidden overflow-y-auto custom-scrollbar">
+            {skills
+              .filter((skill) => skill.prominentSkill)
+              .map((skill) => (
+                <SkillBadge key={skill._id} skill={skill} />
+              ))}
+          </div>
+        </div>
+
+        <div>
+          <h1 className="uppercase tracking-wide-2xl text-gray-500 text-lg md:text-2xl text-center">
+            Other tools I&apos;ve used
+          </h1>
+
+          <div className="p-4 grid grid-cols-4 md:grid-cols-5 xl:grid-cols-7 gap-2 md:gap-5 overflow-x-hidden overflow-y-auto custom-scrollbar">
+            {skills
+              .filter((skill) => !skill.prominentSkill)
+              .map((skill) => (
+                <SkillBadge key={skill._id} skill={skill} />
+              ))}
+          </div>
         </div>
       </motion.div>
     </section>

@@ -18,6 +18,11 @@ export default {
       },
     },
     {
+      name: 'prominentSkill',
+      title: 'Prominent skill?',
+      type: 'boolean',
+    },
+    {
       name: 'experience',
       title: 'Experience',
       description: 'Skill experience',

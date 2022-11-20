@@ -53,6 +53,7 @@ export interface ISkill extends ISanityBody {
   experience?: ISkillExperience;
   image?: ISanityImage;
   name?: string;
+  prominentSkill?: boolean;
 }
 
 export interface ISkillExperience extends ISanityBody {
