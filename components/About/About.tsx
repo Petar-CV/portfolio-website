@@ -62,12 +62,12 @@ export default function About({ pageInfo }: Props) {
             transition={{
               duration: 1.2,
             }}
-            className="space-y-10 px-0 md:px-10 max-w-5xl">
-            <h4 className="text-4xl font-semibold">
+            className="space-y-5 px-0 md:px-10 max-w-5xl">
+            <h4 className="text-2xl md:text-4xl font-semibold">
               Here&apos;s a&nbsp;
               <span className="underline decoration-red-900">snippet</span> of my background
             </h4>
-            <p className="text-base whitespace-pre-line">
+            <p className="text-sm md:text-base whitespace-pre-line">
               {pageInfo.backgroundInformation ?? 'About me'}
             </p>
           </motion.div>
