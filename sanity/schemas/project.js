@@ -38,5 +38,10 @@ export default {
       title: 'Link to build',
       type: 'url',
     },
+    {
+      name: 'repoLink',
+      title: 'Link to project repository',
+      type: 'url',
+    },
   ],
 };

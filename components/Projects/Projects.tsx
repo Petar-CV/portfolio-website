@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 
 import { IProject } from '../../typings';
 import { urlFor } from '../../sanity';
+import Link from 'next/link';
 
 type Props = {
   projects: IProject[];
@@ -27,7 +28,7 @@ export default function Projects({ projects }: Props) {
           {projects.map((project, i) => (
             <div
               key={project._id}
-              className="w-screen h-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44">
+              className="w-screen h-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 px-10 md:p-44">
               <motion.div
                 initial={{ y: -300, opacity: 0 }}
                 transition={{ duration: 1.2 }}
@@ -41,15 +42,39 @@ export default function Projects({ projects }: Props) {
                 />
               </motion.div>
 
-              <div className="space-y-10 px-0 md:px-10 max-w-6xl">
+              <div className="space-y-5 px-0 md:px-10 max-w-6xl">
                 <h4 className="text-xl md:text-4xl font-semibold text-center">
                   <span>
-                    <span className="underline decoration-red-700/50 mr-2">
+                    <span className="underline decoration-lighter-gray mr-2">
                       Project {i + 1} of {projects.length}:
                     </span>
                     {project.title}
                   </span>
                 </h4>
+
+                {project.linkToBuild ? (
+                  <div className="text-lg text-center md:text-left">
+                    Production link: &nbsp;
+                    <Link
+                      href={project.linkToBuild}
+                      target="_blank"
+                      className="hover:brightness-75 underline decoration-lighter-gray decoration-2">
+                      here
+                    </Link>
+                  </div>
+                ) : null}
+
+                {project.repoLink ? (
+                  <div className="text-lg text-center md:text-left">
+                    Repository link: &nbsp;
+                    <Link
+                      href={project.repoLink}
+                      target="_blank"
+                      className="hover:brightness-75 underline decoration-lighter-gray decoration-2">
+                      here
+                    </Link>
+                  </div>
+                ) : null}
 
                 <p className="text-lg text-center md:text-left">{project.summary}</p>
               </div>

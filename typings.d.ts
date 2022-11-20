@@ -44,6 +44,8 @@ export interface IProject extends ISanityBody {
   summary?: string;
   technologies?: ISkill[];
   title?: string;
+  linkToBuild?: string;
+  repoLink?: string;
 }
 
 export interface ISkill extends ISanityBody {
