@@ -20,7 +20,11 @@ export default function WorkExperience({ experiences }: Props) {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1.5 }}
-        className="h-screen m-auto flex items-center p-4 md:p-0 max-w-xl">
+        className="h-screen relative m-auto flex items-center p-4 md:p-0 max-w-xl">
+        <h1 className="absolute top-24 uppercase tracking-wide-2xl text-gray-500 text-2xl w-full text-center">
+          Work experience
+        </h1>
+
         <Swiper
           slidesPerView={'auto'}
           spaceBetween={30}
@@ -35,7 +39,7 @@ export default function WorkExperience({ experiences }: Props) {
           grabCursor={true}
           navigation={true}
           modules={[Autoplay, Pagination, Navigation]}
-          className="min-h-[300px] max-h-[700px] h-full flex justify-center items-center">
+          className="min-h-[300px] max-h-[65%] h-full flex justify-center items-center">
           {experiences.map((experience) => (
             <SwiperSlide key={experience._id}>
               <WorkExperienceCard experience={experience} />
