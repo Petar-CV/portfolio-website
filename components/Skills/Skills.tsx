@@ -16,7 +16,7 @@ export default function Skills({ skills }: Props) {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1.5 }}
-        className="flex flex-col xl:flex-row text-center md:text-left max-w-[2000px] xl:px-10 min-h-screen justify-center xl:space-y-0 mx-auto items-center space-y-8 px-5">
+        className="flex flex-col text-center md:text-left max-w-[2000px] xl:px-10 min-h-screen justify-center mx-auto items-center space-y-8 px-5">
         {/* TODO: Implement a generic component for headers */}
         <div>
           <h1 className="uppercase tracking-wide-2xl text-gray-500 text-lg md:text-2xl text-center">
