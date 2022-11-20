@@ -20,7 +20,7 @@ COPY . .
 
 # Building app (build generates static files so it needs API to be running)
 # TODO: Improve this!!!
-RUN (npm run dev) & (sleep 5; curl -s http://localhost:3000/) && npm run build
+RUN (npm run dev) & (sleep 20; curl -s http://localhost:3000/) && npm run build
 
 EXPOSE 3000
 
