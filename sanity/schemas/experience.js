@@ -19,7 +19,7 @@ export default {
 		{
 			name: 'company',
 			title: 'Company',
-			type: 'text',
+			type: 'string',
 		},
 		{
 			name: 'url',
