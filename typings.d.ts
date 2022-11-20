@@ -54,6 +54,7 @@ export interface ISkill extends ISanityBody {
   image?: ISanityImage;
   name?: string;
   prominentSkill?: boolean;
+  officialPage?: string;
 }
 
 export interface ISkillExperience extends ISanityBody {

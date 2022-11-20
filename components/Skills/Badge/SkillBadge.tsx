@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import Tooltip from '@mui/material/Tooltip';
+import Link from 'next/link';
 
 import { ISkill } from '../../../typings';
 import { urlFor } from '../../../sanity';
@@ -13,7 +14,10 @@ type Props = {
 export default function SkillBadge({ skill }: Props) {
   return (
     <Tooltip title={skill.name}>
-      <div className="group relative flex cursor-pointer">
+      <Link
+        href={skill.officialPage ?? ''}
+        target={'_blank'}
+        className="group relative flex cursor-pointer">
         <motion.div
           initial={{
             opacity: 0,
@@ -28,7 +32,7 @@ export default function SkillBadge({ skill }: Props) {
             height={128}
           />
         </motion.div>
-      </div>
+      </Link>
     </Tooltip>
   );
 }

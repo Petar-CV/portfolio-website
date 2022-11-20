@@ -18,6 +18,11 @@ export default {
       },
     },
     {
+      name: 'officialPage',
+      title: 'Official page',
+      type: 'url',
+    },
+    {
       name: 'prominentSkill',
       title: 'Prominent skill?',
       type: 'boolean',
