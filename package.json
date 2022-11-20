@@ -9,7 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
     "@heroicons/react": "^2.0.13",
+    "@mui/material": "^5.10.14",
     "@portabletext/react": "^2.0.0",
     "@sanity/image-url": "^1.0.1",
     "framer-motion": "^7.6.7",
