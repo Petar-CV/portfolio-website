@@ -9,6 +9,8 @@ on:
 jobs:
   Deploy-Production:
     runs-on: ubuntu-latest
+    env:
+      NEXT_PUBLIC_BASE_URL: ${{ secrets.NEXT_PUBLIC_BASE_URL }}
     steps:
       - uses: actions/checkout@v2
       - name: Install Vercel CLI
