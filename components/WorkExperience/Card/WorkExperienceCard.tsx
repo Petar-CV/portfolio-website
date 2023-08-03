@@ -12,7 +12,7 @@ type Props = {
 
 export default function WorkExperienceCard({ experience }: Props) {
   return (
-    <article className="h-full flex flex-col rounded-lg items-center snap-center p-5 bg-lighter-gray space-y-5 cursor-pointer transition-opacity duration-200">
+    <article className="h-full flex flex-col rounded-lg items-center p-5 bg-lighter-gray space-y-5 cursor-pointer transition-opacity duration-200">
       <motion.div
         className="w-32 h-32 rounded-full xl:w-52 xl:h-52 object-cover object-center"
         initial={{
@@ -71,9 +71,7 @@ export default function WorkExperienceCard({ experience }: Props) {
           <p className="uppercase py-1 md:py-2 text-gray-300">{experience.dateStarted} - Present</p>
         )}
         <ul className="list-disc space-y-1 md:space-y-2 py-1 md:py-2 ml-5 text-sm md:text-lg">
-          {experience.skillsAcquired?.map((skill, i) => (
-            <li key={i}>{skill}</li>
-          ))}
+          {experience.skillsAcquired?.map((skill, i) => <li key={i}>{skill}</li>)}
         </ul>
       </div>
     </article>

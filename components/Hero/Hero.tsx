@@ -49,7 +49,7 @@ export default function Hero({ pageInfo }: Props) {
   return (
     <section
       id="hero"
-      className="h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden snap-start">
+      className="h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden">
       <Image
         className="relative rounded-full h-32 w-32 mx-auto object-cover"
         src={urlFor(pageInfo.heroImage).url()}

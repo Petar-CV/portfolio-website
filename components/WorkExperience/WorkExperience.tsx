@@ -15,7 +15,7 @@ type Props = {
 
 export default function WorkExperience({ experiences }: Props) {
   return (
-    <section id="experience" className="snap-center">
+    <section id="experience">
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}

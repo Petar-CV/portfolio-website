@@ -13,7 +13,7 @@ type Props = {
 
 export default function ProjectCard({ project, projectIndex }: Props) {
   return (
-    <article className="h-full flex flex-col rounded-lg items-center snap-center p-5 bg-lighter-gray space-y-5 cursor-pointer transition-opacity duration-200">
+    <article className="h-full flex flex-col rounded-lg items-center p-5 bg-lighter-gray space-y-5 cursor-pointer transition-opacity duration-200">
       <motion.div
         initial={{ opacity: 0 }}
         transition={{ duration: 1.2 }}

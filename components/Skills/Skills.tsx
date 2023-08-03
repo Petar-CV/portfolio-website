@@ -10,7 +10,7 @@ type Props = {
 
 export default function Skills({ skills }: Props) {
   return (
-    <section id="skills" className="snap-start">
+    <section id="skills">
       {/* TODO: Implement a generic component for sections with same animation */}
       <motion.div
         initial={{ opacity: 0 }}

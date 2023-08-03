@@ -11,7 +11,7 @@ type Props = {
 
 export default function About({ pageInfo }: Props) {
   return (
-    <section id="about" className="snap-center">
+    <section id="about">
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}

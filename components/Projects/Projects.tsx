@@ -15,7 +15,7 @@ type Props = {
 
 export default function Projects({ projects }: Props) {
   return (
-    <section id="projects" className="snap-start">
+    <section id="projects">
       {/* TODO: Implement a generic component for sections with same animation */}
       <motion.div
         initial={{ opacity: 0 }}

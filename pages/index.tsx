@@ -23,7 +23,7 @@ type Props = {
 
 export default function Home({ pageInfo, experiences, skills, projects, socials }: Props) {
   return (
-    <div className="bg-dark-gray text-white h-screen snap-y snap-mandatory overflow-scroll z-0 scroll-smooth overflow-y-scroll overflow-x-hidden custom-scrollbar">
+    <div className="bg-dark-gray text-white h-screen overflow-scroll z-0 scroll-smooth overflow-y-scroll overflow-x-hidden custom-scrollbar">
       <Head>
         <title>Petar CV</title>
         <meta name="description" content="Personal portfolio by Petar Cvetko Voćanec" />

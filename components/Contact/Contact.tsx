@@ -20,7 +20,7 @@ export default function Contact({ pageInfo }: Props) {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: {},
   } = useForm<ContactForm>();
   const onSubmit: SubmitHandler<ContactForm> = (formData) => {
     // TODO: Doesn't work if the user doesn't have an email client installed
@@ -30,7 +30,7 @@ export default function Contact({ pageInfo }: Props) {
   };
 
   return (
-    <section id="contact" className="snap-start">
+    <section id="contact">
       {/* TODO: Implement a generic component for sections with same animation */}
       <motion.div
         initial={{ opacity: 0 }}
